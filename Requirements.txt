@@ -1,8 +1,0 @@
-streamlit
-pandas
-requests
-beautifulsoup4
-transformers
-torch
-scrapingbee
-bs4
