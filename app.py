@@ -14,9 +14,9 @@ HF_API_KEY = "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"   # Hugging Face API key
 
 CSV_FILE = "SB_publications_PMC.csv"  
 
-if not SCRAPINGBEE_API_KEY or not HF_API_KEY:
-    st.error("⚠️ Missing API keys! Please set them in Streamlit Secrets before running the app.")
-    st.stop()  # Prevents the rest of the app from executing
+# if not SCRAPINGBEE_API_KEY or not HF_API_KEY:
+#     st.error("⚠️ Missing API keys! Please set them in Streamlit Secrets before running the app.")
+#     st.stop()  # Prevents the rest of the app from executing
 
 HF_API_URL = "https://api-inference.huggingface.co/models/facebook/bart-large-cnn"
 headers = {"Authorization": f"Bearer {HF_API_KEY}"}
