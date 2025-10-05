@@ -4,17 +4,10 @@ import requests
 from bs4 import BeautifulSoup
 
 # ---- CONFIG ----
-# SCRAPINGBEE_API_KEY = st.secrets["SCRAPINGBEE_API_KEY"]
-# HF_API_KEY = st.secrets["HF_API_KEY"]
-
 SCRAPINGBEE_API_KEY = st.secrets["SCRAPINGBEE_API_KEY"]
 HF_API_KEY = st.secrets["HF_API_KEY"]
 
 CSV_FILE = "SB_publications_PMC.csv"  
-
-# if not SCRAPINGBEE_API_KEY or not HF_API_KEY:
-#     st.error("⚠️ Missing API keys! Please set them in Streamlit Secrets before running the app.")
-#     st.stop()  # Prevents the rest of the app from executing
 
 HF_API_URL = "https://api-inference.huggingface.co/models/facebook/bart-large-cnn"
 headers = {"Authorization": f"Bearer {HF_API_KEY}"}
@@ -42,12 +35,44 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+st.markdown(
+    """
+    <style>
+    .centered-image img {
+        opacity: 0.2;          /* Make it semi-transparent */
+        position: absolute;    /* Position over background */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;           /* Push behind main content */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
+
+# st.title("NASA Bioscience Publications Explorer")
+st.markdown(
+    """
+    <h1 style='
+        text-align: center; 
+        font-family: "Trebuchet MS", sans-serif; 
+        text-decoration: underline; 
+        text-underline-offset: 8px; 
+        text-decoration-thickness: 3px;
+        margin-bottom: 1px;
+    '>
+        NASA Bioscience Publications Explorer
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
 st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
-st.image("AMDASTROMIND.png", width=300)
+st.image("AMDASTROMIND.png", width=900)
 st.markdown("</div>", unsafe_allow_html=True)
 
-st.title("NASA Bioscience Publications Explorer")
+
 
 df = pd.read_csv(CSV_FILE)
 
@@ -55,7 +80,7 @@ if 'Title' not in df.columns or 'Link' not in df.columns:
     st.error("CSV must have 'Title' and 'Link' columns.")
 else:
     # ---- Search by Title ----
-    st.subheader("Search by Publication Title")
+    st.subheader("KEYWORD SEARCH")
     keyword = st.text_input("Enter a keyword to search titles:")
 
     if keyword:
