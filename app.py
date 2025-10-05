@@ -4,8 +4,14 @@ import requests
 from bs4 import BeautifulSoup
 
 # ---- CONFIG ----
-SCRAPINGBEE_API_KEY = st.secrets["SCRAPINGBEE_API_KEY"]
-HF_API_KEY = st.secrets["HF_API_KEY"]
+# SCRAPINGBEE_API_KEY = st.secrets["SCRAPINGBEE_API_KEY"]
+# HF_API_KEY = st.secrets["HF_API_KEY"]
+
+SCRAPINGBEE_API_KEY = "L1KEWHBH3T4GF7U5J8DMVC2HTXDLDPI1XWFWMU1TAA4FP14XEP8F2I9HIYN1SVKDMICFGDLQTJ5N6PBV"  # ScrapingBee API key
+HF_API_KEY = "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"   # Hugging Face API key
+
+
+
 CSV_FILE = "SB_publications_PMC.csv"  
 
 if not SCRAPINGBEE_API_KEY or not HF_API_KEY:
