@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 # HF_API_KEY = st.secrets["HF_API_KEY"]
 
 SCRAPINGBEE_API_KEY = "L1KEWHBH3T4GF7U5J8DMVC2HTXDLDPI1XWFWMU1TAA4FP14XEP8F2I9HIYN1SVKDMICFGDLQTJ5N6PBV"  # ScrapingBee API key
-HF_API_KEY = "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"   # Hugging Face API key
+HF_API_KEY = "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"   # Hugging Face API key
 
 
 
