@@ -54,8 +54,6 @@ df = pd.read_csv(CSV_FILE)
 if 'Title' not in df.columns or 'Link' not in df.columns:
     st.error("CSV must have 'Title' and 'Link' columns.")
 else:
-    st.success(f"Loaded {len(df)} publications")
-
     # ---- Search by Title ----
     st.subheader("Search by Publication Title")
     keyword = st.text_input("Enter a keyword to search titles:")
